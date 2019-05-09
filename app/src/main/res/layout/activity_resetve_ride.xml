@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.Activity.ResetveRideActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="Reserve Your Ride"
+        android:textSize="24sp"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimaryDark"
+        android:padding="15sp"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Vehicle Details"
+            android:textSize="22sp"
+            android:padding="4sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Plate Number"
+            android:layout_margin="6sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vehicle Model"
+            android:layout_margin="6sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Year of Manufacturing"
+            android:layout_margin="6sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Automatic/Manual"
+            android:layout_margin="6sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vehicle Color"
+            android:layout_margin="6sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="6sp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:layout_weight="1"
+                android:src="@drawable/img_suv"
+                android:tint="@color/colorPrimary"
+                android:layout_margin="2dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:text="Upload Photo"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"/>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:background="@color/colorPrimaryDark"
+            android:text="CONFIRM"
+            android:textColor="@color/white"
+            android:id="@+id/btn_confirm"/>
+    </LinearLayout>
+</LinearLayout>

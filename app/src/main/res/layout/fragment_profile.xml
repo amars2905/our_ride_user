@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profile_nav_bar"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="130sp"
+                    android:layout_height="130sp"
+                    android:background="@drawable/man"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="6sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Abc"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:padding="4sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_margin="10sp"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="abc123@gmail.com"
+                android:padding="6sp"
+                android:textSize="16sp"
+                android:textColor="@color/gray_a"
+                android:gravity="center"
+                android:layout_margin="10sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="235346345135"
+                android:padding="6sp"
+                android:textSize="16sp"
+                android:textColor="@color/gray_a"
+                android:gravity="center"
+                android:layout_margin="10sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Change Password"
+                android:padding="6sp"
+                android:textSize="16sp"
+                android:textColor="@color/gray_a"
+                android:gravity="center"
+                android:layout_margin="10sp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Edit Profile"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:layout_margin="6sp"
+                android:id="@+id/btn_edit_profile"/>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
