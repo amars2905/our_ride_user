@@ -5,20 +5,27 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_book_a_ride"
+            android:title="Book A Ride" />
+
+        <item
+            android:id="@+id/nav_plans"
+            android:title="Plan" />
+        <item
             android:id="@+id/nav_history"
             android:title="History" />
         <item
-            android:id="@+id/nav_book_a_ride"
-            android:title="Book a ride" />
-        <item
-            android:id="@+id/nav_plans"
-            android:title="Plans" />
+            android:id="@+id/nav_vehicle"
+            android:title="Vehicle" />
         <item
             android:id="@+id/nav_change_password"
             android:title="My Profile" />
         <item
-            android:id="@+id/nav_vehicle"
-            android:title="Vehicle" />
+            android:id="@+id/nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_add_familymember"
+            android:title="Add Family Member" />
         <item
             android:id="@+id/nav_logout"
             android:title="Logout" />

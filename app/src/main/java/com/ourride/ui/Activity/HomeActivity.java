@@ -16,19 +16,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.ourride.R;
 import com.ourride.constant.Constant;
+import com.ourride.ui.fragment.AddFamilyMemberFragment;
+import com.ourride.ui.fragment.AddVehicleFragment;
 import com.ourride.ui.fragment.HistoryFragment;
 import com.ourride.ui.fragment.HomeFragment;
 import com.ourride.ui.fragment.PlanFragment;
 import com.ourride.ui.fragment.ProfileFragment;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements View.OnClickListener {
 
     private Button btn_proceed;
     Context context;
+    private Toolbar toolbar;
 
     private static FragmentManager fragmentManager;
 
@@ -36,7 +40,7 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         context = this;
@@ -47,8 +51,14 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        ((TextView) findViewById(R.id.nav_book_a_ride)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.nav_plan)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.nav_history)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.nav_vehicle)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.nav_profile)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.nav_home)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.nav_add_familymember)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.nav_logout)).setOnClickListener(this);
 
         fragmentManager = getSupportFragmentManager();
 
@@ -67,6 +77,7 @@ public class HomeActivity extends AppCompatActivity
                 .beginTransaction()
                 .replace(R.id.home_frame, new HomeFragment(),
                         Constant.HomeFragment).commit();
+
     }
 
     @Override
@@ -101,47 +112,57 @@ public class HomeActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.nav_book_a_ride:
+                toolbar.setTitle("Book A Ride");
+                fragmentManager.beginTransaction().replace(R.id.home_frame, new HomeFragment(), Constant.HomeFragment).commit();
+                onBackPressed();
+                break;
+            case R.id.nav_plan:
+                toolbar.setTitle("Plan");
+                fragmentManager.beginTransaction().replace(R.id.home_frame, new PlanFragment(), Constant.PlanFragment).commit();
+                onBackPressed();
+                break;
+            case R.id.nav_history:
+                toolbar.setTitle("History");
+                fragmentManager.beginTransaction().replace(R.id.home_frame, new HistoryFragment(), Constant.HistoryFragment).commit();
+                onBackPressed();
+                break;
+            case R.id.nav_vehicle:
+                toolbar.setTitle("Vehicle");
+                fragmentManager.beginTransaction().replace(R.id.home_frame, new AddVehicleFragment(), Constant.AddVehicleFragment).commit();
+                onBackPressed();
+                break;
+            case R.id.nav_profile:
+                toolbar.setTitle("Change Password");
+                fragmentManager.beginTransaction().replace(R.id.home_frame, new ProfileFragment(), Constant.ProfileFragment).commit();
+                onBackPressed();
+                break;
+            case R.id.nav_home:
+                toolbar.setTitle("Home");
+                fragmentManager.beginTransaction().replace(R.id.home_frame, new ProfileFragment(), Constant.ProfileFragment).commit();
+                onBackPressed();
+                break;
+            case R.id.nav_add_familymember:
+                toolbar.setTitle("Add Family Member");
+                fragmentManager.beginTransaction().replace(R.id.home_frame, new AddFamilyMemberFragment(), Constant.AddFamilyMemberFragment).commit();
+                onBackPressed();
+                break;
+            case R.id.nav_logout:
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                break;
 
-        if (id == R.id.nav_history) {
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.home_frame,
-                            new HistoryFragment(),
-                            Constant.HistoryFragment).commit();
-        } else if (id == R.id.nav_book_a_ride) {
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.home_frame,
-                            new HomeFragment(),
-                            Constant.HomeFragment).commit();
-        } else if (id == R.id.nav_plans) {
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.home_frame,
-                            new PlanFragment(),
-                            Constant.PlanFragment).commit();
-        } else if (id == R.id.nav_change_password) {
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.home_frame,
-                            new ProfileFragment(),
-                            Constant.ProfileFragment).commit();
-        } else if (id == R.id.nav_vehicle) {
-            Intent intent = new Intent(HomeActivity.this, ResetveRideActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_logout) {
-            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        /*        }*//* else if (id == R.id.nav_change_password) {
+            Intent intent = new Intent(HomeActivity.this, ResetveRideActivity.class);
+            startActivity(intent);
+        }*//* else if (id == R.id.nav_logout) {
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();*/
+
     }
 }

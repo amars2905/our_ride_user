@@ -1,48 +1,43 @@
 package com.ourride.ui.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
 import com.ourride.R;
-import com.ourride.ui.Activity.EditProfileActivity;
+import com.ourride.ui.Activity.ChangePasswordActivity;
+import com.ourride.utils.BaseFragment;
 
 
-public class ProfileFragment extends Fragment implements View.OnClickListener {
+public class ProfileFragment extends BaseFragment implements View.OnClickListener {
+    private View rootView;
 
-    private Button btn_edit_profile;
-    public ProfileFragment() {
-        // Required empty public constructor
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        mContext = getActivity();
+        init();
+        return rootView;
     }
 
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        btn_edit_profile = view.findViewById(R.id.btn_edit_profile);
-        btn_edit_profile.setOnClickListener(this);
-
-        return view;
+    private void init() {
+        ((TextView) rootView.findViewById(R.id.tvChangePassword)).setOnClickListener(this);
+        //   tvEditProfile.setOnClickListener(this);
     }
 
-
     @Override
-    public void onClick(View view) {
-        switch (view.getId())
-        {
-            case R.id.btn_edit_profile:
-                Intent integer = new Intent(getActivity(), EditProfileActivity.class);
-                startActivity(integer);
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tvChangePassword:
+                startActivity(new Intent(mContext, ChangePasswordActivity.class));
                 break;
         }
+
     }
 }

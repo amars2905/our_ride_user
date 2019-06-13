@@ -10,6 +10,7 @@ import com.ourride.R;
 
 public class OtpActivity extends AppCompatActivity {
     Button btn_number;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -8,9 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ui.Activity.VehicleActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".ui.Activity.VehicleActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ui.Activity.EditProfileActivity"
             android:screenOrientation="portrait"
@@ -57,6 +58,7 @@
             android:name=".ui.Activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ui.Activity.ChangePasswordActivity" />
     </application>
 
 </manifest>

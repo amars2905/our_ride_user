@@ -8,55 +8,56 @@
     tools:context=".ui.Activity.HomeActivity">
 
     <LinearLayout
+        android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@color/gray_g"
-        android:padding="6sp"
-        android:id="@+id/ll1">
+        android:orientation="vertical"
+        android:padding="6sp">
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Pick up location and requested time"
-            android:background="@color/white"
-            android:padding="8sp"
+            android:layout_height="40dp"
             android:layout_margin="4sp"
-            android:textSize="14sp"/>
+            android:background="@color/white"
+            android:hint="Pick up location and requested time"
+            android:padding="8sp"
+            android:textSize="14sp" />
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Destination"
+            android:layout_height="40dp"
+            android:layout_margin="4sp"
             android:background="@color/white"
+            android:hint="Destination"
             android:padding="8sp"
-            android:textSize="14sp"
-            android:layout_margin="4sp"/>
+            android:textSize="14sp" />
     </LinearLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/map2"
+        android:layout_above="@id/ll2"
+        android:layout_below="@id/ll1"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:layout_above="@id/ll2"
-        android:layout_below="@id/ll1"/>
+        android:src="@drawable/map2" />
 
     <LinearLayout
+        android:id="@+id/ll2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/gray_g"
-        android:padding="6sp"
-        android:id="@+id/ll2">
+        android:padding="6sp">
+
         <Button
+            android:id="@+id/btn_proceed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12sp"
             android:background="@color/colorPrimaryDark"
             android:text="Proceed"
-            android:textColor="@color/white"
-            android:id="@+id/btn_proceed"/>
+            android:textColor="@color/white" />
     </LinearLayout>
 </RelativeLayout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,65 +8,123 @@
     tools:context=".ui.Activity.SignUpActivity">
 
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimaryDark"
-        android:text="Sign up"
-        android:textSize="24sp"
         android:gravity="center_vertical"
         android:paddingLeft="15sp"
-        android:textColor="@color/white"/>
+        android:text="Reserve Your Ride"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <ImageView
         android:layout_width="180sp"
         android:layout_height="180sp"
-        android:src="@drawable/logo"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:src="@drawable/logo" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_centerInParent="true"
-        android:layout_margin="10sp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="UserName"
-            android:textSize="18sp"
-            android:layout_margin="6sp"/>
+        android:layout_margin="10sp"
+        android:orientation="vertical">
 
-        <EditText
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email id"
-            android:textSize="18sp"
-            android:layout_margin="6sp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:textSize="18sp"
-            android:layout_margin="6sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6sp"
+                android:hint="Name"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="18sp" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            android:textSize="18sp"
-            android:layout_margin="6sp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6sp"
+                android:hint="UserName"
+                android:singleLine="true"
+                android:textSize="18sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6sp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textSize="18sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6sp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="18sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6sp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="18sp" />
+        </android.support.design.widget.TextInputLayout>
 
         <Button
+            android:id="@+id/btn_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="6sp"
             android:background="@color/colorPrimaryDark"
             android:text="SIGN IN"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:id="@+id/btn_sign_in"/>
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>
